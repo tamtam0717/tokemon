@@ -46,8 +46,8 @@ Mキーでも きりかえられる。`,close:`せっていを おわる。`},fa
 はかせの ところに よって いきなさい。」`]):await Aa.momShoes(e)},momStop:async e=>{e.flag(`gotShoes`)||await Aa.momShoes(e)},momShoes:async e=>{e.setFlag(`gotShoes`),await e.say([`おかあさん「${e.playerName}！ ちょっと まって！」`,`おかあさん「これを はいて いきなさい。」`]),await e.giveItem(`shoes`,1),await e.say([`おかあさん「Bボタンを おしながら あるくと
 はやく はしれるのよ。」`,`おかあさん「たいかいに いくんでしょ？
 はかせの ところに よって いきなさい。」`])},homeShelfL:async e=>{await e.say([`えほん『やまの ぬし』`,`むかし むかし、 やまの おくふかくで
-ぬしが ねむって いました。`,`ぬしの ねむりを さまたげては いけません。
-めを さました ぬしは、 だれにも とめられません。`])},homeShelfR:async e=>{await e.say([`『トケモンと なかよく くらす ほん』`,`トケモンにも きぶんが あります。
+ぬしが ねむって いました。`,`ぬしは ねむりながら、 やまの トケモンたちを
+いつも みまもって いるのです。`])},homeShelfR:async e=>{await e.say([`『トケモンと なかよく くらす ほん』`,`トケモンにも きぶんが あります。
 ときどき きいて あげましょう。`])},pokecenter:async e=>{await e.say([`「トケモンセンターへ ようこそ！」`,`「ここでは トケモンの たいりょく
 かいふくを いたします。」`]),await e.choose(`トケモンを やすませますか？`,[`はい`,`いいえ`])===0?(await e.say([`「それでは あずからせて いただきます！」`]),await e.heal(),await e.say([`「おまたせ しました！」`,`「またの ごりようを おまちしております！」`])):await e.say([`「またの ごりようを おまちしております！」`])},pc:async e=>{await e.say([`${e.playerName}は パソコンの\nスイッチを いれた！`,`あずかりボックスに つながった。`]),await e.box()},shop:async e=>{await e.say([`「いらっしゃいませ！
 なにを おもとめですか？」`]),await e.shop([`capsule`,`potion`])},labProf:async e=>{if(e.flag(`starterChosen`))e.flag(`beatNushi`)?await e.say([`はかせ「テレビで みたぞ！
@@ -111,8 +111,8 @@ Mキーでも きりかえられる。`,close:`せっていを おわる。`},fa
 たのんだぜ！」`]),e.setFlag(`rivalCaveDone`)):(await e.say([`ライバル「せかいを すくうのは おれだ！」`,`ライバル「どっちが ふさわしいか、
 ここで きめて やる！」`]),await e.battle(`rival3`)===`win`?(await e.say([`ライバル「ほら、 かいふく してやるよ。」`]),await e.heal(),await e.say([`ライバル「…… まいった。 おまえの かちだ。」`,`ライバル「この おくに ぬしが いる。
 おまえなら ぜったい しずめられる！」`]),e.setFlag(`rivalCaveDone`)):_.flags.rivalCaveComing=!1))},caveRivalEnter:async e=>{e.flag(`rivalCaveDone`)&&e.setFlag(`rivalPosted`)},priorityBook:async e=>{await e.say([`『わざの ひみつ』`,`せんせいわざは、 すばやさに かんけいなく
-あいてより さきに くりだせる。`,`せんせいわざには 「でんこうせっか」と
-「こらえる」の 2しゅるいが ある。`])},rivalPost:async e=>{await e.say([`ライバル「ぬしを たおしに いくんだろ？
+あいてより さきに くりだせる。`,`せんせいわざには 「でんこうせっか」
+「こらえる」「てっぺき」の 3しゅるいが ある。`])},rivalPost:async e=>{await e.say([`ライバル「ぬしを たおしに いくんだろ？
 かいふく してやるよ。」`]),await e.heal()},deepEnter:async e=>{e.flag(`finalFail5`)&&!e.flag(`beatNushi`)?await e.say([`…… ぬしの すがたが ない。`]):e.flag(`beatGym3`)||(await e.say([`…… ぬしの すがたが ない。`]),_.party.some(e=>e.species===`horouru`)&&await e.say([`ホロメ「ぬしは いま、 べつの ところで
 あばれて いるようだ……」`,`ホロメ「さきに チチットを しずめに いこう。」`]))},rivalHealCheck:async e=>{e.flag(`rivalCaveDone`)&&!e.flag(`beatNushi`)&&e.anyHurt()&&(await e.say([`ライバル「まて！ ぬしを たおしに いくんだろ？
 かいふく してやるよ。」`]),await e.heal())},supervisorFall:async e=>{e.flag(`supervisorFell`)||e.flag(`dugHole`)||e.flag(`kantokuFalling`)||(e.sound(`rumble`),await e.say([`「わーーーーーっ！！」`]),e.setFlag(`kantokuFalling`),await e.drop(`kantoku`),await e.say([`どすん！`]),await e.approach(6,3),e.face(`player`,`right`),await e.say([`おじさん「イタタ……」`,`おじさん「そうだ、 ちょうど わたしの いえの したを
