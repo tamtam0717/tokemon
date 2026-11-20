@@ -76,8 +76,8 @@ Mキーでも きりかえられる。`,close:`せっていを おわる。`},ma
 ここで ひょうしょう するよ。」`,`うんえい「ほんばんの けっしょう かいじょうは
 まだ ひみつ！」`,`うんえい「はい、 もんだいようし。
 バッグから いつでも みられるよ。」`]),await e.giveItem(`sheet`,1);return}if(!e.flag(`dugCenter`)){await e.say([`うんえい「もんだいようしは バッグに あるよ。
-がんばってね！」`]);return}await e.say([`うんえい「おめでとう！ ぜんもん せいかい！
-それでは ひょうしょうを……」`]),e.music(null),e.sound(`rumble`),await e.say([`…… ゴゴゴゴゴ！`]),e.sound(`cry`),await e.say([`キィィィーーッ！`,`うんえい「な、 なんの おと！？」`,`うんえい「そとの ほうだ！ いってみよう！」`]),e.setFlag(`rampage1`),await e.warp(`town2`,16,11,`right`),await e.say([`うんえい「こっちだ！」`]),await e.walk(`staff`,[`right`,`right`,`up`,`right`,`up`,`up`]),e.face(`staff`,`up`),await e.walk(`player`,[`right`,`right`,`right`,`up`,`up`,`up`]),e.face(`player`,`up`);let t=async(t,n)=>{e.hop(t),await e.say([n])};await t(`crowd1`,`まちの ひと「トケモンが あばれてるぞ！」`),await t(`crowd2`,`まちの ひと「うんえいの ひとが あぶない！」`),await t(`crowd3`,`まちの ひと「おかしい……
+がんばってね！」`]);return}await e.say([`うんえい「おめでとう！ ぜんもん せいかい！」`,`うんえい「まずは けいひんの
+ふしぎなアメを どうぞ！」`]),await Oa(e),await e.say([`うんえい「それでは ひょうしょうを……」`]),e.music(null),e.sound(`rumble`),await e.say([`…… ゴゴゴゴゴ！`]),e.sound(`cry`),await e.say([`キィィィーーッ！`,`うんえい「な、 なんの おと！？」`,`うんえい「そとの ほうだ！ いってみよう！」`]),e.setFlag(`rampage1`),await e.warp(`town2`,16,11,`right`),await e.say([`うんえい「こっちだ！」`]),await e.walk(`staff`,[`right`,`right`,`up`,`right`,`up`,`up`]),e.face(`staff`,`up`),await e.walk(`player`,[`right`,`right`,`right`,`up`,`up`,`up`]),e.face(`player`,`up`);let t=async(t,n)=>{e.hop(t),await e.say([n])};await t(`crowd1`,`まちの ひと「トケモンが あばれてるぞ！」`),await t(`crowd2`,`まちの ひと「うんえいの ひとが あぶない！」`),await t(`crowd3`,`まちの ひと「おかしい……
 ヒラソヨは ふだんは おとなしい トケモンなのに……」`),e.face(`dad`,`left`),await t(`dad`,`まちの ひと「こどもは いえの なかに いなさい！」`),e.face(`kid`,`left`),await e.walk(`kid`,[`left`,`left`,`left`,`left`,`left`,`left`,`up`],!0),e.setFlag(`kidFled`),e.face(`dad`,`right`),await t(`guard`,`うんえい「た、 たすけて〜！」`)},trial1Fight:async e=>{if(e.sound(`cry`),await e.say([`ヒラソヨ「キィィーーッ！」`]),await e.battle(`trial1`)!==`win`)return;await e.say([`ヒラソヨは われに かえって
 とんで いった。`]);let t=async(t,n)=>{e.hop(t),await e.say([n])};await t(`guard`,`うんえい「た、 たすかった……
 ありがとう！」`),await t(`crowd1`,`まちの ひと「よかった〜！」`),await t(`crowd2`,`まちの ひと「うんえいの ひとも
@@ -87,15 +87,13 @@ Mキーでも きりかえられる。`,close:`せっていを おわる。`},ma
 あばれだした もようです。」`,`ラジオ「ことしは やまの きのみが ふさくで、
 きが たって いるとの ことです。」`,`ラジオ「その えいきょうで、 ほかの トケモンも
 きょうぼうに なって いるようです。」`]),await t(`staff`,`うんえい「たいへんだ……！ このままでは
-たいかいが ちゅうしに なってしまう……！」`),await t(`staff`,`うんえい「あっ、 そのまえに……
-プレたいかいの けいひんを どうぞ！」`),await Oa(e),await t(`staff`,`うんえい「わたしたちも ほんぶに
+たいかいが ちゅうしに なってしまう……！」`),await t(`staff`,`うんえい「わたしたちも ほんぶに
 もどらないと……！」`),e.music(`map`),await Promise.all([e.walk(`crowd1`,[`left`,`left`,`up`,`up`,`left`,`left`]),e.walk(`crowd2`,[`left`,`left`,`left`,`left`,`left`,`left`,`down`,`left`,`left`,`left`,`down`]),e.walk(`crowd3`,[`left`,`left`,`left`,`left`,`left`,`left`,`down`,`down`,`down`,`right`]),e.walk(`dad`,[`left`,`left`,`left`,`left`,`left`,`left`,`left`,`left`,`left`,`left`,`left`,`left`]),e.walk(`guard`,[`right`]).then(()=>e.setFlag(`guardLeftTown2`)),e.walk(`staff`,[`down`,`down`,`down`,`left`,`left`,`left`,`left`,`up`]).then(()=>e.setFlag(`staffBackToTent`))]),e.setFlag(`trial1Done`)},trial2Fight:async e=>{if(await e.say([`チチットは あばれている！`]),await e.battle(`gym3`)!==`win`)return;let t=async(t,n)=>{e.hop(t),await e.say([n])};await Promise.all([e.walk(`c3a`,[`right`,`right`],!0),e.walk(`c3c`,[`left`],!0),e.walk(`c3b`,[`right`,`right`,`right`],!0),e.walk(`c3d`,[`left`,`left`],!0),e.walk(`c3e`,[`right`,`right`,`up`],!0)]),e.face(`c3a`,`right`),e.face(`c3c`,`left`),e.face(`c3b`,`right`),e.face(`c3d`,`left`),e.face(`c3e`,`up`),e.face(`player`,`down`),await t(`c3d`,`うんえい「たすかった！
 これで もんに ちかづける！」`),await t(`c3d`,`うんえい「これは おれいだよ！」`),await ka(e),await t(`c3a`,`まちの ひと「すごかったな！ ありがとう！」`),await t(`c3c`,`まちの ひと「ありがとう！」`),await Promise.all([e.walk(`c3a`,[`down`,`down`,`down`,`left`]),e.walk(`c3c`,[`down`,`down`,`down`,`right`,`right`]),e.walk(`c3b`,[`left`,`left`,`left`,`left`,`left`]),e.walk(`c3d`,[`right`]),e.walk(`c3e`,[`down`,`down`,`down`,`down`,`down`,`left`,`left`])]),e.setFlag(`trial2Done`)},trial2Staff:async e=>{e.flag(`gotTrial2Prize`)||(await e.say([`うんえい「そうだ、 おれいを わたしそびれてた！」`]),await ka(e)),await e.say([`うんえい「たすかったよ！
 ほんとうに ありがとう！」`])},rivalAmbush:async e=>{e.flag(`beatTrial1`)&&!e.flag(`rivalGone`)&&(await e.say([`？？？「まてーー！」`]),e.setFlag(`rivalComing`),await e.walk(`rival`,[`right`,`right`,`right`,`right`,`right`,`right`,`right`,`right`],!0),e.face(`player`,`left`),await e.say([`ライバル「ぬけがけは ゆるさないぞ！」`]),await e.battle(`rival2`)===`win`?(await e.say([`ライバル「やまの ぬしが ぼうそう！？
 このままじゃ たいかいが ちゅうしだって！？」`,`ライバル「おれらで ぬしを しずめに いくしか ないな！！」`,`ライバル「そうと きまったら まけてられねぇ！
 おれは さきを いそぐぜ！！」`]),await e.walk(`player`,[`down`]),e.face(`player`,`up`),await e.walk(`rival`,[`right`,`right`,`right`],!0),e.setFlag(`rivalGone`)):_.flags.rivalComing=!1)},readSheet:async e=>{await e.picture([xa,Sa,wa])},digCenter:async e=>{e.flag(`dugCenter`)?await e.say([`もう なにも うまっていない。`]):(e.setFlag(`dugCenter`),await e.say([`つちの なかから ちいさな はこが でてきた！
-プレたいかいの あかしだ。`,`はこの なかには ふしぎなアメが
-はいっていた！`]),await e.giveItem(`candy`,1))},staffShelf:async e=>{await e.say([`ほんだなに メモが はさまっている。`]),await e.showMemo(`answerKey`),(!e.flag(`rampage1`)||e.flag(`trial1Done`))&&await e.say([`うんえい「こらこら！ それは うんえいようの
+プレたいかいの あかしだ。`]))},staffShelf:async e=>{await e.say([`ほんだなに メモが はさまっている。`]),await e.showMemo(`answerKey`),(!e.flag(`rampage1`)||e.flag(`trial1Done`))&&await e.say([`うんえい「こらこら！ それは うんえいようの
 メモだから、 かってに みないで！」`])},damageBook:async e=>{await e.say([`『トケモン バトルの きほん』`,`わざの いりょく から あいての ぼうぎょ を
 ひいた ぶんが ダメージに なる。`,`どんなに かたい あいてでも、
 かならず 1は ダメージが はいる。`])},birdBook:async e=>{await e.say([`『きたの ちほうの とり』`,`ホワリは おおきく なると、 はねが かたく
